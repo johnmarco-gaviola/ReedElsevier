@@ -1,0 +1,33 @@
+{
+  "name": "reedelsevier",
+  "version": "1.0.0",
+  "description": "Practical exam for RELX",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:api && npm run test:ui",
+    "test:api": "mocha --timeout 120000 src/tests/restfulBooker.api.test.js --exit",
+    "test:ui": "mocha --timeout 120000 --require src/fixtures/browserFixture.js src/tests/cheapflights.ui.test.js --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnmarco-gaviola/ReedElsevier.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/johnmarco-gaviola/ReedElsevier/issues"
+  },
+  "homepage": "https://github.com/johnmarco-gaviola/ReedElsevier#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "playwright": "^1.61.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.0.1",
+    "chai": "^6.2.2",
+    "mocha": "^11.7.6"
+  }
+}
