@@ -5,10 +5,18 @@ describe('Cheapflights UI Tests', function() {
   this.timeout(120000);
 
   describe('Logo and Login Button', function() {
-    it('should display the logo and login button on the home', async function() {
+    it('should display the logo and its position and login button on the home', async function() {
 
       expect(await this.homePage.logo.isVisible()).to.be.true;
       expect(await this.homePage.loginButton.isVisible()).to.be.true;
+
+      const logoBox = await this.homePage.logo.boundingBox();
+      expect(logoBox).to.exist;
+      expect(logoBox.y).to.be.at.least(0);
+      expect(logoBox.y).to.be.below(220);
+      expect(logoBox.x).to.be.at.least(0);
+      expect(logoBox.width).to.be.greaterThan(0);
+      expect(logoBox.height).to.be.greaterThan(0);
       
     });
   });
